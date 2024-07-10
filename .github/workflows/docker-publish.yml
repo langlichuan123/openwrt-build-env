@@ -24,11 +24,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        BASE_IMAGE_TAG: [20.04, 18.04]
+        BASE_IMAGE_TAG: [22.04, 18.04]
         include:
-          - BASE_IMAGE_TAG: 20.04
-            DOCKER_TAG: latest,20.04
-            DEPENDS_LIST: depends-ubuntu-2004
+          - BASE_IMAGE_TAG: 22.04
+            DOCKER_TAG: latest,22.04
+            DEPENDS_LIST: depends-ubuntu-2204
           - BASE_IMAGE_TAG: 18.04
             DOCKER_TAG: 18.04
             DEPENDS_LIST: depends-ubuntu-1804
