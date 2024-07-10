@@ -3,17 +3,17 @@
 # MIT License
 # Copyright (c) 2020 P3TERX <https://p3terx.com>
 
-ARG BASE_IMAGE_TAG=20.04
+ARG BASE_IMAGE_TAG=22.04
 FROM linuxplus/ubuntu:${BASE_IMAGE_TAG}
 
 USER root
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG DEPENDS_LIST=depends-ubuntu-2004
+ARG DEPENDS_LIST=depends-ubuntu-2204
 
 RUN apt-get update -qq && \
     apt-get upgrade -qqy && \
-    apt-get install -qqy $(curl -fsSL git.io/${DEPENDS_LIST}) && \
+    apt-get install -qqy build-essential clang flex g++ gawk gcc-multilib gettext git libncurses5-dev libssl-dev python3-distutils rsync unzip zlib1g-dev file wget && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
